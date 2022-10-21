@@ -19,13 +19,12 @@ const MainRoutes = () => {
     <Route path='/register' element={<RegistrationPage/>}/>
     <Route path='/login' element={<LoginPage/>}/>
     <Route path='*' element={<NotFoundPage/>}/>
-    <Route path='/admin' element={<AdminPage/>}/>
+    <Route path='/add' element={<AdminPage/>}/>
     <Route path='/edit/:id' element={<EditedMovie/>}/>
     <Route path='/fav' element={<FavouritesPage/>}/>
     <Route path='/movie' element={<MoviesPage/>}/>
     <Route path='/movie/:id' element={<MovieDetailsPage/>}/>
     <Route path='/' element={<HomePage/>}/>
-
   </Routes>
   </>
   )
