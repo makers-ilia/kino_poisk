@@ -9,7 +9,7 @@ const API =  "http://localhost:7000/users"
 
 
 const AuthContextProvider = ({ children }) => {
-  const [users, setUsers] = useState([]);
+  const [user, setUser] = useState([]);
   const [error, setError] = useState([]);
 
   // register logic 
@@ -30,6 +30,8 @@ const AuthContextProvider = ({ children }) => {
 
   // login logic 
 
+
+
   function initStorage(){
     if(!localStorage.getItem('user')){
         localStorage.setItem('user', '{}')
@@ -42,7 +44,13 @@ const AuthContextProvider = ({ children }) => {
     let users = await axios(API)
     let userObj = users.data.find(item => item.username === username);
     localStorage.setItem("user", JSON.stringify(userObj));
+
+    let oneUser = JSON.parse(localStorage.getItem('user'))
+    setUser(oneUser);
+    // console.log(user);
   }
+  
+
 
   function checkUserPassword(user, password){
     return user.password === password;
@@ -73,7 +81,6 @@ const AuthContextProvider = ({ children }) => {
       let users = await axios(API)
       console.log(users);
       let userObj = users.data.find(item => item.username === username);
-      
     console.log(userObj);
 
     if(!checkIsAdmin(userObj, isAdmin)){
@@ -82,16 +89,16 @@ const AuthContextProvider = ({ children }) => {
      return true;
    }  
 
-
-
-  // const checkPassword = async(user, password) => {
-  //   let res = await axios(API);
-  //   if(!checkUserPassword()){
-  //     alert('Wrong password');
-  //     return;
-  //   }
-  // }
-
+   const adminCheck = () => {
+    let user = JSON.parse(localStorage.getItem('user'));
+    console.log(user.isAdmin);
+    if(user.isAdmin === true){
+     return true;
+    } else{
+      return false;
+    }
+   }
+   console.log(adminCheck())
 
 
   return (
@@ -102,9 +109,10 @@ const AuthContextProvider = ({ children }) => {
       checkPassword,
       checkStatus,
       initStorage,
-      setUserToStorage
+      setUserToStorage,
+      adminCheck,
       
-
+      user
     }}>
       { children }
     </authContext.Provider>

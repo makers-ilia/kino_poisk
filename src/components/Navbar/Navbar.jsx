@@ -18,6 +18,8 @@ import SearchIcon from '@mui/icons-material/Search';
 
 //custom
 import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../../context/AuthContextProvider';
+
 
 
 const pages = [
@@ -52,6 +54,11 @@ const settings = [
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
+  const { adminCheck, user } = useAuth();
+  
+  // let userObj = JSON.parse(localStorage.getItem('user'))
+  console.log(user.isAdmin);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -171,9 +178,14 @@ function Navbar() {
                   <Typography textAlign="center">{page.type}</Typography>
                 </MenuItem>
               ))}
-              <MenuItem>
-                  <Typography textAlign="center">Add Movie</Typography>
-                </MenuItem>
+              {user.isAdmin === true ? (
+                <MenuItem>
+                <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
+              </MenuItem>
+              ) : (
+                <></>
+              )}
+              
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -205,9 +217,13 @@ function Navbar() {
                 {page.type}
               </Button>
             ))}
-            <MenuItem>
-                  <Typography textAlign="center">Add Movie</Typography>
-                </MenuItem>
+            {user.isAdmin === true ? (
+                <MenuItem>
+                <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
+              </MenuItem>
+              ) : (
+                ''
+              )}
           </Box>
           <Box style={{marginRight: '2%'}}>
           <Search>
