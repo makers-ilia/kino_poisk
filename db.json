@@ -1,12 +1,37 @@
 {
-    "users": [
-        {
-    
-        }
-    ],
-    "movies": [
-        {
-
+  "users": [
+    {
+      "username": "1",
+      "age": "1",
+      "password": "1",
+      "confPass": "1",
+      "isAdmin": false,
+      "id": 1
+    },
+    {
+      "username": "12",
+      "age": "1",
+      "password": "1",
+      "confPass": "1",
+      "isAdmin": false,
+      "id": 2
+    },
+    {
+      "username": "165432",
+      "age": "1",
+      "password": "1",
+      "confPass": "1",
+      "isAdmin": false,
+      "id": 3
+    },
+    {
+      "username": "marat",
+      "age": "18",
+      "password": "123",
+      "confPass": "123",
+      "isAdmin": true,
+      "id": 4
     }
-    ]
+  ],
+  "movies": []
 }

@@ -29,10 +29,10 @@ const pages = [
   //   type: 'Genre',
   //   path: '///'
   // },
-  {
-   type: 'Add Movie',
-   path: '/add'
-  },
+  // {
+  //  type: 'Add Movie',
+  //  path: '/add'
+  // },
   {
     type: 'Favourites',
     path: '/fav'
@@ -49,7 +49,7 @@ const settings = [
     }
 ];
 
-function ResponsiveAppBar() {
+function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -171,6 +171,9 @@ function ResponsiveAppBar() {
                   <Typography textAlign="center">{page.type}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem>
+                  <Typography textAlign="center">Add Movie</Typography>
+                </MenuItem>
             </Menu>
           </Box>
           <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
@@ -202,8 +205,10 @@ function ResponsiveAppBar() {
                 {page.type}
               </Button>
             ))}
+            <MenuItem>
+                  <Typography textAlign="center">Add Movie</Typography>
+                </MenuItem>
           </Box>
-
           <Box style={{marginRight: '2%'}}>
           <Search>
             <SearchIconWrapper>
@@ -250,4 +255,4 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
-export default ResponsiveAppBar;
+export default Navbar;
