@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import MoviesList from '../components/movies/MoviesList';
 
 const MoviesPage = () => {
   return (
-    <div>MoviesPage</div>
+    <div>
+      <MoviesList />
+    </div>
   )
 }
 

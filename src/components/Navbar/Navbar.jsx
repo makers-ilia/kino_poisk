@@ -24,8 +24,8 @@ import { useAuth } from '../../context/AuthContextProvider';
 
 const pages = [
   {
-    type: 'Home',
-    path: '/'
+    type: 'Movies',
+    path: '/movie'
   },
   // {
   //   type: 'Genre',
@@ -58,7 +58,7 @@ function Navbar() {
   const { adminCheck, user } = useAuth();
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
-  console.log(user.isAdmin);
+  // console.log(user.isAdmin);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -183,7 +183,7 @@ function Navbar() {
                 <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
               </MenuItem>
               ) : (
-                <></>
+                ''
               )}
               
             </Menu>

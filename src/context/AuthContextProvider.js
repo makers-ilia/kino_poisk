@@ -89,16 +89,18 @@ const AuthContextProvider = ({ children }) => {
      return true;
    }  
 
-   const adminCheck = () => {
-    let user = JSON.parse(localStorage.getItem('user'));
-    console.log(user.isAdmin);
-    if(user.isAdmin === true){
-     return true;
-    } else{
-      return false;
-    }
-   }
-   console.log(adminCheck())
+  //  const adminCheck = () => {
+  //   let user = JSON.parse(localStorage.getItem('user'));
+  //   // console.log(user.isAdmin);
+  //   if(user.isAdmin === true){
+  //    return true;
+  //   } else{
+  //     return false;
+  //   }
+  //  }
+  //  console.log(adminCheck())
+
+   
 
 
   return (
@@ -110,7 +112,7 @@ const AuthContextProvider = ({ children }) => {
       checkStatus,
       initStorage,
       setUserToStorage,
-      adminCheck,
+      // adminCheck,
       
       user
     }}>
