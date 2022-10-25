@@ -1,0 +1,13 @@
+.put{
+    width: 100%;
+  padding: 7px;
+  border: 2px solid #ffffff !important;
+  border-radius:10px ;
+  font-size: 15px;
+  color: rgb(0, 0, 0);
+  outline: none;
+}
+
+.put:focus-within{
+    border-color: rgb(139, 184, 226) !important;
+}

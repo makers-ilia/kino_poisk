@@ -15,10 +15,14 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { styled, alpha } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
+import '../Navbar/Navbar.css'
 
 //custom
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContextProvider';
+import { useMovies } from '../../context/MovieContextProvider';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 
@@ -56,7 +60,26 @@ function Navbar() {
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
   const { adminCheck, user } = useAuth();
+  const {movies, getMovies} = useMovies()
   
+  useEffect(() => {
+    getMovies();
+  }, []);
+ 
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [search, setSearch] = useState(searchParams.get("q") || "")
+
+  useEffect(()=>{
+    setSearchParams({
+      q: search
+    });
+
+  }, [search])
+
+  useEffect(() => {
+    getMovies();
+  }, [searchParams, ]);
+
   // let userObj = JSON.parse(localStorage.getItem('user'))
   // console.log(user.isAdmin);
 
@@ -141,7 +164,7 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            kino
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -205,7 +228,7 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            kono
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -227,15 +250,19 @@ function Navbar() {
           </Box>
           <Box style={{marginRight: '2%'}}>
             {/* new branch create */}
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
             <StyledInputBase
+            type='text'
               placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
+              // inputProps={{ 'aria-label': 'search' }}
+
+              value={search} onChange={e => setSearch(e.target.value)}
             />
-          </Search>
+          </Search> */}
+          <input className='put' type="text" value={search} onChange={(e) => {setSearch(e.target.value); navigate("/movie")}} placeholder='Search...' />
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
