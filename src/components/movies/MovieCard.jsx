@@ -1,6 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMovies } from '../../context/MovieContextProvider';
+import { useAuth } from '../../context/AuthContextProvider';
 
 // mui imports 
 import Card from '@mui/material/Card';
@@ -15,6 +16,7 @@ const MovieCard = ({ item }) => {
   const navigate = useNavigate();
 
   const { deleteMovie } = useMovies();
+  const { user } = useAuth();
 
   return (
     <div id='productCard' style={{margin: '1%'}}>
@@ -31,8 +33,11 @@ const MovieCard = ({ item }) => {
         alt="product picture"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h3" component="div">
           {item.name}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.genre}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {item.description}
@@ -40,8 +45,11 @@ const MovieCard = ({ item }) => {
       </CardContent>
       <CardActions>
         <Button onClick={() => navigate(`/details/${item.id}`)} size="small">Details</Button>
+        {user.isAdmin === true ? (
+        <>
         <Button onClick={() => navigate(`/edit/${item.id}`)} size="small">Edit</Button>
         <Button onClick={() => deleteMovie(item.id)} size="small">Delete</Button>
+        </>) : ('')}
         <Button size="small">Add to cart</Button>
       </CardActions>
     </Card>

@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import EditMovie from '../components/movies/EditMovie';
 
 const EditedMovie = () => {
   return (
-    <div>EditedMovie</div>
+    <>
+      <EditMovie />
+    </>
   )
 }
 

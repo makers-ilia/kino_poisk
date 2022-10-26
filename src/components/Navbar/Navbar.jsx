@@ -51,11 +51,17 @@ const settings = [
     }
 ];
 
+
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  React.useEffect(() => {
+    getUserFromStorage();
+    // console.log('qwert');
+  }, [])
 
-  const { adminCheck, user } = useAuth();
+  const { getUserFromStorage, user } = useAuth();
+
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
   // console.log(user.isAdmin);
