@@ -128,7 +128,6 @@ const AuthContextProvider = ({ children }) => {
       setUserToStorage,
       getUserFromStorage,
       // adminCheck,
-      
       user
     }}>
       { children }
