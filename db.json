@@ -47,6 +47,14 @@
       "confPass": "1",
       "isAdmin": false,
       "id": 6
+    },
+    {
+      "username": "4",
+      "age": "4",
+      "password": "4",
+      "confPass": "4",
+      "isAdmin": true,
+      "id": 7
     }
   ],
   "movies": [
