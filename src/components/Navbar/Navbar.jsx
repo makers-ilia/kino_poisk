@@ -59,12 +59,28 @@ function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
-  const { adminCheck, user } = useAuth();
-  const {movies, getMovies} = useMovies()
+  const { user, checkStatus } = useAuth();
+  const {movies, getMovies} = useMovies();
+
+  // const adminCheck = () => {
+  //   let user = JSON.parse(localStorage.getItem('user'));
+  //   console.log(user.isAdmin);
+  //   if(user.isAdmin === true){
+  //    return true;
+  //   } else{
+  //     return false;
+  //   }
+  //  }
   
   useEffect(() => {
     getMovies();
   }, []);
+
+  useEffect(() => {
+    if(localStorage.getItem("user")){
+      console.log(user);
+  };
+  }, [])
  
   const [searchParams, setSearchParams] = useSearchParams()
   const [search, setSearch] = useState(searchParams.get("q") || "")

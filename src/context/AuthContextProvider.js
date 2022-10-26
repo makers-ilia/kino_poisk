@@ -10,7 +10,7 @@ const API =  "http://localhost:7000/users"
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  const [error, setError] = useState([]);
+  // const [error, setError] = useState([]);
 
   // register logic 
   const registerUser = (user) => {
@@ -47,8 +47,11 @@ const AuthContextProvider = ({ children }) => {
 
     let oneUser = JSON.parse(localStorage.getItem('user'))
     setUser(oneUser);
-    // console.log(user);
+    // console.log(oneUser);
   }
+
+
+  console.log(user);
   
 
 
@@ -87,7 +90,7 @@ const AuthContextProvider = ({ children }) => {
       return false;
     }
      return true;
-   }  
+    }  
 
   //  const adminCheck = () => {
   //   let user = JSON.parse(localStorage.getItem('user'));

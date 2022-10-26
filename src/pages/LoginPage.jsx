@@ -60,15 +60,7 @@ const LoginPage = () => {
       return;
     }
 
-    const adminCheck = () => {
-      let user = JSON.parse(localStorage.getItem('user'));
-      // console.log(user.isAdmin);
-      if(user.isAdmin === true){
-       return true;
-      } else{
-        return false;
-      }
-     }
+    
 
   initStorage();
 
