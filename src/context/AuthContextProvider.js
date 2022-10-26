@@ -1,11 +1,11 @@
-import React, {useContext, useState} from 'react'
+import React, {useContext, useEffect, useState} from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
 
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext)
 
-const API =  "http://localhost:7000/users"
+const API =  "http://localhost:3000/users"
 
 
 const AuthContextProvider = ({ children }) => {
@@ -30,27 +30,26 @@ const AuthContextProvider = ({ children }) => {
 
   // login logic 
 
-
-
   function initStorage(){
     if(!localStorage.getItem('user')){
         localStorage.setItem('user', '{}')
     };
   };
 
-
-
   const setUserToStorage = async(username) => {
     let users = await axios(API)
     let userObj = users.data.find(item => item.username === username);
     localStorage.setItem("user", JSON.stringify(userObj));
-
     let oneUser = JSON.parse(localStorage.getItem('user'))
     setUser(oneUser);
-    // console.log(user);
+    console.log(user);
   }
-  
 
+
+  const getUserFromStorage = () => {
+    let oneUser = JSON.parse(localStorage.getItem('user'))
+    setUser(oneUser)
+  }
 
   function checkUserPassword(user, password){
     return user.password === password;
@@ -89,6 +88,7 @@ const AuthContextProvider = ({ children }) => {
      return true;
    }  
 
+
   //  const adminCheck = () => {
   //   let user = JSON.parse(localStorage.getItem('user'));
   //   // console.log(user.isAdmin);
@@ -101,8 +101,6 @@ const AuthContextProvider = ({ children }) => {
   //  console.log(adminCheck())
 
    
-
-
   return (
     <authContext.Provider value={{
       registerUser,
@@ -112,6 +110,7 @@ const AuthContextProvider = ({ children }) => {
       checkStatus,
       initStorage,
       setUserToStorage,
+      getUserFromStorage,
       // adminCheck,
       
       user
