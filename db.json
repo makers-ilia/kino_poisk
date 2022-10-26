@@ -49,6 +49,7 @@
       "id": 6
     },
     {
+
       "username": "4",
       "age": "4",
       "password": "4",
@@ -56,7 +57,8 @@
       "isAdmin": true,
       "id": 7
     },
-    {
+
+
       "username": "1123",
       "age": "1123",
       "password": "1123",
@@ -75,10 +77,10 @@
   ],
   "movies": [
     {
-      "name": "Taxi",
-      "genre": "horror",
-      "image": "https://s3.amazonaws.com/static.rogerebert.com/uploads/review/primary_image/reviews/titanic-1997/Titanic-2017.jpg",
-      "description": "The movie is about the 1912 sinking of the RMS Titanic. It stars Kate Winslet and Leonardo DiCaprio. The two play characters who are of different social classes. They fall in love after meeting aboard the ship, but it was not good for a rich girl to fall in love with a poor boy in 1912.",
+      "name": "marat",
+      "genre": "marat",
+      "image": "marat",
+      "description": "marat",
       "id": 1
     }
   ]

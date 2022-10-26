@@ -50,6 +50,7 @@ const settings = [
 
 
 
+
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -74,6 +75,16 @@ function Navbar() {
     setSearchParams({
       q: search
     });
+
+function Navbar() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  useEffect(() => {
+    getUserFromStorage();
+  }, [])
+
+  const { getUserFromStorage, user } = useAuth();
+
 
   
   // let userObj = JSON.parse(localStorage.getItem('user'))

@@ -104,8 +104,6 @@ const AuthContextProvider = ({ children }) => {
   //  console.log(adminCheck())
 
    
-
-
   return (
     <authContext.Provider value={{
       registerUser,
