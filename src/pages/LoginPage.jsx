@@ -11,6 +11,7 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 
 import { useAuth } from '../context/AuthContextProvider';
+import { useNavigate } from 'react-router-dom';
 
 const LoginPage = () => {
   const { checkUsername, checkPassword, checkStatus, initStorage, setUserToStorage } = useAuth();
@@ -23,6 +24,7 @@ const LoginPage = () => {
     setIsAdmin(event.target.checked);
   };
 
+  const navigate = useNavigate()
 
 
   const loginUser = async() => {
@@ -60,15 +62,6 @@ const LoginPage = () => {
       return;
     }
 
-    const adminCheck = () => {
-      let user = JSON.parse(localStorage.getItem('user'));
-      // console.log(user.isAdmin);
-      if(user.isAdmin === true){
-       return true;
-      } else{
-        return false;
-      }
-     }
 
   initStorage();
 
@@ -78,6 +71,8 @@ const LoginPage = () => {
     setUsername('');
     setPassword('');
     setIsAdmin(false);
+
+    navigate('/movie')
 
   }
 

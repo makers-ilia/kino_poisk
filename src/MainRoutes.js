@@ -23,7 +23,7 @@ const MainRoutes = () => {
     <Route path='/edit/:id' element={<EditedMovie/>}/>
     <Route path='/fav' element={<FavouritesPage/>}/>
     <Route path='/movie' element={<MoviesPage/>}/>
-    <Route path='/movie/:id' element={<MovieDetailsPage/>}/>
+    <Route path='/details/:id' element={<MovieDetailsPage/>}/>
     <Route path='/' element={<HomePage/>}/>
   </Routes>
   </>
