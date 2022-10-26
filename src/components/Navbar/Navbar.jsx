@@ -31,18 +31,14 @@ const pages = [
     type: 'Movies',
     path: '/movie'
   },
-  // {
-  //   type: 'Genre',
-  //   path: '///'
-  // },
-  // {
-  //  type: 'Add Movie',
-  //  path: '/add'
-  // },
   {
     type: 'Favourites',
     path: '/fav'
-  }
+  },
+  {
+    type: 'Cart',
+    path: '/cart'
+}
 ];
 const settings = [
     {
@@ -55,22 +51,19 @@ const settings = [
     }
 ];
 
+
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  React.useEffect(() => {
+    getUserFromStorage();
+    // console.log('qwert');
+  }, [])
 
-  const { user, checkStatus } = useAuth();
-  const {movies, getMovies} = useMovies();
+  const { getUserFromStorage, user } = useAuth();
 
-  // const adminCheck = () => {
-  //   let user = JSON.parse(localStorage.getItem('user'));
-  //   console.log(user.isAdmin);
-  //   if(user.isAdmin === true){
-  //    return true;
-  //   } else{
-  //     return false;
-  //   }
-  //  }
+  const { adminCheck, user } = useAuth();
+  const {movies, getMovies} = useMovies()
   
   useEffect(() => {
     getMovies();
@@ -182,7 +175,7 @@ function Navbar() {
           >
             kino
           </Typography>
-
+<button></button>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -193,6 +186,7 @@ function Navbar() {
               color="inherit"
             >
               <MenuIcon />
+          
             </IconButton>
             <Menu
               id="menu-appbar"

@@ -10,6 +10,7 @@ const MoviesList = () => {
       getMovies()
     }, [])
 
+
   return (
     <div>
       
