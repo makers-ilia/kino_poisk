@@ -28,18 +28,14 @@ const pages = [
     type: 'Movies',
     path: '/movie'
   },
-  // {
-  //   type: 'Genre',
-  //   path: '///'
-  // },
-  // {
-  //  type: 'Add Movie',
-  //  path: '/add'
-  // },
   {
     type: 'Favourites',
     path: '/fav'
-  }
+  },
+  {
+    type: 'Cart',
+    path: '/cart'
+}
 ];
 const settings = [
     {
@@ -53,6 +49,33 @@ const settings = [
 ];
 
 
+
+
+function Navbar() {
+  const [anchorElNav, setAnchorElNav] = React.useState(null);
+  const [anchorElUser, setAnchorElUser] = React.useState(null);
+  React.useEffect(() => {
+    getUserFromStorage();
+    // console.log('qwert');
+  }, [])
+
+  const { getUserFromStorage, user } = useAuth();
+
+  
+  const {movies, getMovies} = useMovies()
+  
+  useEffect(() => {
+    getMovies();
+  }, []);
+ 
+  const [searchParams, setSearchParams] = useSearchParams()
+  const [search, setSearch] = useState(searchParams.get("q") || "")
+
+  useEffect(()=>{
+    setSearchParams({
+      q: search
+    });
+
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -61,6 +84,7 @@ function Navbar() {
   }, [])
 
   const { getUserFromStorage, user } = useAuth();
+
 
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
@@ -159,6 +183,7 @@ function Navbar() {
               color="inherit"
             >
               <MenuIcon />
+          
             </IconButton>
             <Menu
               id="menu-appbar"

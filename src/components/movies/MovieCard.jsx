@@ -3,6 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import { useMovies } from '../../context/MovieContextProvider';
 import { authContext, useAuth } from '../../context/AuthContextProvider';
 
+import { useAuth } from '../../context/AuthContextProvider';
+
+
 // mui imports 
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
@@ -33,8 +36,11 @@ const MovieCard = ({ item }) => {
         alt="product picture"
       />
       <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="h3" component="div">
           {item.name}
+        </Typography>
+        <Typography gutterBottom variant="h5" component="div">
+          {item.genre}
         </Typography>
         <Typography variant="body2" color="text.secondary">
           {item.description}

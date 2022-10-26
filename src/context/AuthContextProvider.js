@@ -10,7 +10,7 @@ const API =  "http://localhost:3000/users"
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  const [error, setError] = useState([]);
+  // const [error, setError] = useState([]);
 
   // register logic 
   const registerUser = (user) => {
@@ -22,6 +22,7 @@ const AuthContextProvider = ({ children }) => {
     let result = res.data.some(item => item.username === username);
     console.log(res.data);
     console.log(result);
+
     if(result){
       return true;
     } 
@@ -82,6 +83,8 @@ const AuthContextProvider = ({ children }) => {
       let userObj = users.data.find(item => item.username === username);
     console.log(userObj);
 
+    setUser(userObj);
+
     if(!checkIsAdmin(userObj, isAdmin)){
       return false;
     }
@@ -112,7 +115,6 @@ const AuthContextProvider = ({ children }) => {
       setUserToStorage,
       getUserFromStorage,
       // adminCheck,
-      
       user
     }}>
       { children }
