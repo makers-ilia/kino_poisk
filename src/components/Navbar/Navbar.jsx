@@ -31,18 +31,14 @@ const pages = [
     type: 'Movies',
     path: '/movie'
   },
-  // {
-  //   type: 'Genre',
-  //   path: '///'
-  // },
-  // {
-  //  type: 'Add Movie',
-  //  path: '/add'
-  // },
   {
     type: 'Favourites',
     path: '/fav'
-  }
+  },
+  {
+    type: 'Cart',
+    path: '/cart'
+}
 ];
 const settings = [
     {
@@ -173,7 +169,7 @@ function Navbar() {
           >
             kino
           </Typography>
-
+<button></button>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
               size="large"
@@ -184,6 +180,7 @@ function Navbar() {
               color="inherit"
             >
               <MenuIcon />
+          
             </IconButton>
             <Menu
               id="menu-appbar"
