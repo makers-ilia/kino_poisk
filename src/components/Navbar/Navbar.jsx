@@ -62,7 +62,7 @@ function Navbar() {
 
   const { getUserFromStorage, user } = useAuth();
 
-  const { adminCheck, user } = useAuth();
+
   const {movies, getMovies} = useMovies()
   
   useEffect(() => {
