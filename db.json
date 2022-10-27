@@ -55,8 +55,8 @@
       "confPass": "4",
       "isAdmin": true,
       "id": 7
-      },
-    { 
+    },
+    {
       "username": "1123",
       "age": "1123",
       "password": "1123",
@@ -73,13 +73,12 @@
       "id": 8
     }
   ],
-
   "movies": [
     {
-      "name": "marat",
-      "genre": "marat",
-      "image": "marat",
-      "description": "marat",
+      "name": "Titanic",
+      "genre": "Drama",
+      "image": "https://c4.wallpaperflare.com/wallpaper/970/201/126/titanic-movie-wallpaper-preview.jpg",
+      "description": "The movie is about the 1912 sinking of the RMS Titanic. It stars Kate Winslet and Leonardo DiCaprio. The two play characters who are of different social classes. They fall in love after meeting aboard the ship, but it was not good for a rich girl to fall in love with a poor boy in 1912.",
       "id": 1
     }
   ]

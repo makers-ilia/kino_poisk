@@ -33,6 +33,7 @@ const MovieContextProvider = ({ children }) => {
       //get all movies
       const getMovies = async () => {
         const { data } = await axios(`${MOVIE_API}/${window.location.search}`);
+        // console.log(window.location.search);
         dispatch({
             type: 'GET_MOVIES',
             payload: data
@@ -65,13 +66,31 @@ const MovieContextProvider = ({ children }) => {
     getMovies();
   }
 
+  // for filter 
+
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(location.search);
+    // console.log(search);
+
+    if(value === 'all'){
+        search.delete(query)
+    }else{
+        search.set(query, value)
+    };
+
+    // console.log(value);
+
+    const url = `${location.pathname}?${search.toString()}`;
+    navigate(url);
+}
+
   const values = {
     addMovie,
     getMovies,
     deleteMovie,
     getMovieDetails,
     saveEditedMovie,
-    // fetchByParams,
+    fetchByParams,
 
     movies: state.movies,
     movieDetails: state.movieDetails
