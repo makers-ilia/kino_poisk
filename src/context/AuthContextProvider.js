@@ -43,6 +43,7 @@ const AuthContextProvider = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(userObj));
     let oneUser = JSON.parse(localStorage.getItem('user'))
     setUser(oneUser);
+
     console.log(user);
   }
 
@@ -89,7 +90,7 @@ const AuthContextProvider = ({ children }) => {
       return false;
     }
      return true;
-   }  
+    }  
 
 
   //  const adminCheck = () => {

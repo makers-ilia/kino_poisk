@@ -62,9 +62,6 @@ const LoginPage = () => {
       return;
     }
 
-
-  initStorage();
-
   setUserToStorage(username)
 
     

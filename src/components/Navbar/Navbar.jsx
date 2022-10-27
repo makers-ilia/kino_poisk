@@ -61,12 +61,18 @@ function Navbar() {
 
   const { getUserFromStorage, user } = useAuth();
 
-  
+
   const {movies, getMovies} = useMovies()
   
   useEffect(() => {
     getMovies();
   }, []);
+
+  useEffect(() => {
+    if(localStorage.getItem("user")){
+      console.log(user);
+  };
+  }, [])
  
   const [searchParams, setSearchParams] = useSearchParams()
   const [search, setSearch] = useState(searchParams.get("q") || "")
