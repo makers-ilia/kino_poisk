@@ -21,7 +21,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContextProvider';
 import { useEffect } from 'react';
 import { useMovies } from '../../context/MovieContextProvider';
-
+import FilterMovie from '../movies/FilterMovie';
 
 
 const pages = [
@@ -62,9 +62,13 @@ function Navbar() {
   }, [])
 
   const navigate = useNavigate()
+  const { initStorage } = useAuth();
 
+  useEffect(() => {
+    initStorage()
+  }, [])
 
-  const { getUserFromStorage, user } = useAuth();
+  const { getUserFromStorage, user, logout } = useAuth();
 
 
   const {movies, getMovies} = useMovies()
@@ -209,6 +213,9 @@ function Navbar() {
                   <Typography textAlign="center">{page.type}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem>
+                <FilterMovie />
+              </MenuItem>
               {user.isAdmin === true ? (
                 <MenuItem>
                 <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
@@ -248,6 +255,9 @@ function Navbar() {
                 {page.type}
               </Button>
             ))}
+            <MenuItem>
+                <FilterMovie />
+              </MenuItem>
             {user.isAdmin === true ? (
                 <MenuItem>
                 <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
@@ -295,6 +305,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting.type}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={logout}>Logout</MenuItem>
             </Menu>
           </Box>
         </Toolbar>

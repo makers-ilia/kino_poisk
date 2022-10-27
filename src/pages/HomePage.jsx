@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import FilterMovie from '../components/movies/FilterMovie';
 
 const HomePage = () => {
   return (
     <>
-    <div>HomePage
-    </div>
+    {/* <FilterMovie /> */}
    
     </>
   )
