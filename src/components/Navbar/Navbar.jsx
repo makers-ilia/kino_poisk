@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,9 +17,10 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
 //custom
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContextProvider';
 import { useEffect } from 'react';
+import { useMovies } from '../../context/MovieContextProvider';
 
 
 
@@ -54,10 +55,14 @@ const settings = [
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   React.useEffect(() => {
     getUserFromStorage();
     // console.log('qwert');
   }, [])
+
+  const navigate = useNavigate()
+
 
   const { getUserFromStorage, user } = useAuth();
 
@@ -80,17 +85,8 @@ function Navbar() {
   useEffect(()=>{
     setSearchParams({
       q: search
-    });
-
-function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  useEffect(() => {
-    getUserFromStorage();
-  }, [])
-
-  const { getUserFromStorage, user } = useAuth();
-
+    })
+    }, []);
 
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
@@ -153,7 +149,6 @@ function Navbar() {
     },
   }));
 
-  const navigate = useNavigate()
 
   return (
 
@@ -307,4 +302,4 @@ function Navbar() {
     </AppBar>
   );
 }
-export default Navbar;
+export default Navbar

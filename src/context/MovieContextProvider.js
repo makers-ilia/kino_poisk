@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 export const movieContext = createContext();
 export const useMovies = () => useContext(movieContext);
 
-const MOVIE_API = 'http://localhost:3000/movies'
+const MOVIE_API = 'http://localhost:8000/movies'
 
 const INIT_STATE = {
   movies: [],
