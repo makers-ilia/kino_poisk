@@ -44,6 +44,9 @@ const MovieCard = ({ item }) => {
         <Typography variant="body2" color="text.secondary">
           {item.description}
         </Typography>
+        <Typography variant="body2" color="text.secondary">
+          {item.director}
+        </Typography>
       </CardContent>
       <CardActions>
         <Button onClick={() => navigate(`/details/${item.id}`)} size="small">Details</Button>

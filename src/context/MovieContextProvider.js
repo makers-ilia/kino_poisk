@@ -55,10 +55,14 @@ const MovieContextProvider = ({ children }) => {
   //update/details
   const getMovieDetails = async (id) => {
     const { data } = await axios(`${MOVIE_API}/${id}`);
+    // const res = await axios(`${MOVIE_API}/${id}`);
     dispatch({
         type: 'GET_MOVIE_DETAILS',
         payload: data
     });
+
+
+
   };
 
   const saveEditedMovie = async (newProduct) => {
@@ -96,6 +100,9 @@ const MovieContextProvider = ({ children }) => {
     movies: state.movies,
     movieDetails: state.movieDetails
 };
+
+
+// console.log(state.movieDetails, );
 
   return (
     <movieContext.Provider value={values}>

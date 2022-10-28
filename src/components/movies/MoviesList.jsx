@@ -37,7 +37,7 @@ const MoviesList = () => {
 
   return (
     <div>
-      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      <div style={{display: 'flex', flexWrap: 'wrap', justifyContent: 'center'}}>
       {movies ? currentData().map(item => (
           <MovieCard key={item.id} item={item} />
         )) : (

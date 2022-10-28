@@ -72,22 +72,25 @@ const RegistrationPage = () => {
 
   return (
     <>
-    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%'}}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%', color: 'black'}}>
+    <div style={{background: 'orange', display: 'flex', flexDirection: 'column', opacity: '70%', borderRadius: '30px', height: '55vh', width: '20vw', padding: '3%'}}>
       <h2>Registration page</h2>
-      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5, }} /> 
+      <AccountCircle sx={{ color: 'orange', mr: 1, my: 0.5, }} /> 
       <TextField id="input-with-sx" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
       <TextField id="standard-basic" label="Age" variant="standard" onChange={e => setAge(e.target.value)} value={age}/> 
       <TextField id="standard-basic" label="Password" variant="standard" onChange={e => setPassword(e.target.value)} value={password} />
       <TextField id="standard-basic" label="Confirm Password" variant="standard" onChange={e => setConfPass(e.target.value)} value={confPass} /> 
+      
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
        <Checkbox 
           checked={isAdmin}
           onChange={handleChange}
           {...label} /> <p>Admin</p>
        </Box>
-       <Button onClick={addUser}  variant="outlined" size="medium">
+       <Button onClick={addUser} sx={{color: 'black', borderRadius: '20px'}} variant="contained" color="warning" size="medium">
           Register
         </Button>
+    </div>
     </Box> 
     </>
   )

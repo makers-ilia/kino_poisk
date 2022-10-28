@@ -10,15 +10,39 @@ import Typography from '@mui/material/Typography';
 
 const MovieDetails = () => {
   const { id } = useParams();
-  const { getMovieDetails, movieDetails } = useMovies();
+  const { getMovieDetails, movieDetails, movies } = useMovies();
+
 
   const [cast, setCast] = useState('');
   const [img, setImg] = useState('');
 
+
+useEffect(()=>{
+  console.log(movies);
+},[])
+
+
+
   useEffect(() => {
-    getMovieDetails(id)
-    // console.log(movieDetails);
+    setTimeout(() => {
+      getMovieDetails(id);
+    }, 1000)
   }, [])
+
+
+
+
+  // setTimeout(() => {
+  //   movieDetails.cast.forEach(element => {
+      // console.log(element[0])
+  //   });
+  //   console.log(movieDetails);
+  // }, 1000)
+  
+
+
+
+  // console.log(movieDetails.director);
 
   // console.log(movieDetails.cast);
   // setCast(movieDetails.cast.split(', '));

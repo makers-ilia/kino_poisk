@@ -97,7 +97,7 @@ const AuthContextProvider = ({ children }) => {
     function logout(){
       localStorage.removeItem("user");
       setUser('');
-      navigate('/movie');
+      navigate('/movies');
   }
 
    
