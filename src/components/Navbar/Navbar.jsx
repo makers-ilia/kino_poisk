@@ -90,7 +90,11 @@ function Navbar() {
     setSearchParams({
       q: search
     })
-    }, []);
+    }, [search]);
+
+    useEffect(()=>{
+      getMovies()
+      }, [searchParams, ]);
 
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
@@ -268,7 +272,7 @@ function Navbar() {
           </Box>
           <Box style={{marginRight: '2%'}}>
             {/* new branch create */}
-          <Search>
+          {/* <Search>
             <SearchIconWrapper>
               <SearchIcon />
             </SearchIconWrapper>
@@ -276,7 +280,8 @@ function Navbar() {
               placeholder="Search…"
               inputProps={{ 'aria-label': 'search' }}
             />
-          </Search>
+          </Search> */}
+          <input className='put' type="text" value={search} onChange={(e) => {setSearch(e.target.value); navigate("/movies")}} placeholder='Search...' />
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
