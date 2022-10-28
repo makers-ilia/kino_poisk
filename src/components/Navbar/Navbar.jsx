@@ -161,7 +161,7 @@ function Navbar() {
   return (
 
 
-    <AppBar position="sticky">
+    <AppBar sx={{backgroundColor: '#03101c', color: 'orange', borderBottom: 'orange'}} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
@@ -180,20 +180,20 @@ function Navbar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            KinoPoisk
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
             <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
+              // size="large"
+              // aria-label="account of current user"
+              // aria-controls="menu-appbar"
+              // aria-haspopup="true"
+              // onClick={handleOpenNavMenu}
+              // color="inherit"
             >
               <MenuIcon />
           
-            </IconButton>
+             </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
