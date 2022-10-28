@@ -21,7 +21,7 @@ const MovieCard = ({ item }) => {
  const { user} = useAuth();
 
   return (
-    <div id='productCard' style={{margin: '1%'}}>
+    <div  id='productCard' style={{margin: '1%',zIndex: '2'}}>
       {/* {item.name} {item.price}
       <button onClick={() => navigate(`/details/${item.id}`)}>Details</button>
       <button onClick={() => navigate(`/edit/${item.id}`)}>Edit</button>
