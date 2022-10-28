@@ -28,8 +28,9 @@ export default function MultilineTextFields() {
   const [image, setImage] = useState('');
   const [description, setDescription] = useState('');
   const [duration, setDuration] = useState('');
-  const [cast, setCast] = useState('');
-  const [castImg, setCastImg] = useState('');
+  const [director, setDirector] = useState('');
+  const [dirImg, setDirImg] = useState('');
+
 
   const buttonAdd = () => {
     if(!name.trim() || !age.trim() || !genre.trim() || !image.trim() || !description.trim()){
@@ -40,13 +41,13 @@ export default function MultilineTextFields() {
     let movieObj = {
       name,
       age,
-      year,
       genre,
+      year,
       image,
       description,
       duration,
-      cast,
-      castImg
+      director,
+      dirImg
     }
 
     // setMovie(movieObj);
@@ -59,8 +60,8 @@ export default function MultilineTextFields() {
     setImage('');
     setDescription('');
     setDuration('');
-    setCast('');
-    setCastImg('');
+    setDirector('');
+    setDirImg('');
     navigate('/movies');
   }
 
@@ -76,7 +77,7 @@ export default function MultilineTextFields() {
     >
       <h2>Add movie</h2>
         <TextField value={name}
-          onChange={e => setName(e.target.value).toLowerCase()}
+          onChange={e => setName(e.target.value)}
           id="standard-textarea"
           label="Movie name"
           placeholder="Movie name "
@@ -84,7 +85,7 @@ export default function MultilineTextFields() {
           variant="standard"
         />
         <TextField value={age}
-          onChange={e => setAge(e.target.value).toLowerCase()}
+          onChange={e => setAge(e.target.value)}
           id="standard-textarea"
           label="Age limit"
           placeholder="Age limit "
@@ -92,7 +93,7 @@ export default function MultilineTextFields() {
           variant="standard"
         />
          <TextField value={genre}
-          onChange={e => setGenre(e.target.value).toLowerCase()}
+          onChange={e => setGenre(e.target.value)}
           id="standard-textarea"
           label="Issue year"
           placeholder="Issue year"
@@ -100,7 +101,7 @@ export default function MultilineTextFields() {
           variant="standard"
         />
         <TextField value={year}
-          onChange={e => setYear(e.target.value).toLowerCase()}
+          onChange={e => setYear(e.target.value)}
           id="standard-textarea"
           label="Genre"
           placeholder="Genre"
@@ -108,7 +109,7 @@ export default function MultilineTextFields() {
           variant="standard"
         />
         <TextField value={image}
-          onChange={e => setImage(e.target.value).toLowerCase()}
+          onChange={e => setImage(e.target.value)}
           id="standard-textarea"
           label="Image"
           placeholder="Image"
@@ -116,7 +117,7 @@ export default function MultilineTextFields() {
           variant="standard"
         />
          <TextField value={description}
-          onChange={e => setDescription(e.target.value).toLowerCase()}
+          onChange={e => setDescription(e.target.value)}
           id="standard-textarea"
           label="Description"
           placeholder="Description"
@@ -124,26 +125,26 @@ export default function MultilineTextFields() {
           variant="standard"
         />
         <TextField value={duration}
-          onChange={e => setDuration(e.target.value).toLowerCase()}
+          onChange={e => setDuration(e.target.value)}
           id="standard-textarea"
           label="Duration"
           placeholder="Duration"
           multiline
           variant="standard"
         />
-        <TextField value={cast}
-          onChange={e => setCast(e.target.value).toLowerCase()}
+        <TextField value={director}
+          onChange={e => setDirector(e.target.value)}
           id="standard-textarea"
-          label="Cast"
-          placeholder="Cast"
+          label="Director"
+          placeholder="Director"
           multiline
           variant="standard"
         />
-        <TextField value={castImg}
-          onChange={e => setCastImg(e.target.value).toLowerCase()}
+        <TextField value={dirImg}
+          onChange={e => setDirImg(e.target.value)}
           id="standard-textarea"
-          label="Cast images"
-          placeholder="Cast images"
+          label="Director image"
+          placeholder="Director image"
           multiline
           variant="standard"
         />

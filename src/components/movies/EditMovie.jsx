@@ -121,22 +121,22 @@ const handleInp = e => {
           variant="standard"
         />
         <TextField
-          name='cast' 
-          value={movie.cast}
+          name='director' 
+          value={movie.director}
           onChange={handleInp}
           id="standard-textarea"
-          label="Cast"
-          placeholder="Cast"
+          label="Director"
+          placeholder="Director"
           multiline
           variant="standard"
         />
         <TextField
           name='castImg' 
-          value={movie.castImg}
+          value={movie.dirImg}
           onChange={handleInp}
           id="standard-textarea"
-          label="Cast images"
-          placeholder="Cast images"
+          label="Director images"
+          placeholder="Director images"
           multiline
           variant="standard"
         />

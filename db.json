@@ -75,45 +75,28 @@
   ],
   "movies": [
     {
-      "name": "Titanic",
-      "genre": "Drama",
-      "image": "https://c4.wallpaperflare.com/wallpaper/970/201/126/titanic-movie-wallpaper-preview.jpg",
-      "description": "The movie is about the 1912 sinking of the RMS Titanic. It stars Kate Winslet and Leonardo DiCaprio. The two play characters who are of different social classes. They fall in love after meeting aboard the ship, but it was not good for a rich girl to fall in love with a poor boy in 1912.",
-      "cast": [
-        "qwert, efghjk, fghjk"
-      ],
-      "id": 1
+      "name": "Forrest Gump",
+      "age": "16",
+      "year": "Drama",
+      "genre": "1994",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppDgk99BKVA4TJtWc1FN4-HUkdWrFNfMm1-M0nQ01sIOcbTZu",
+      "description": "Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.",
+      "duration": "142",
+      "director": "Robert Zemeckis",
+      "dirImg": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRUU5scNk6F4ZbsvLF5FrpRlWXchaD8yWuehj6cfeqOdGaaCOFM",
+      "id": 6
     },
     {
-      "name": "Interstellar",
-      "genre": "Fantasy",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmX9URW2u_05PCekoVVgxP8ZafeTDyogUMQ9VtPprUVEK5hKH2x0Sa6ME1oCRxZNsNVhQ&usqp=CAU",
-      "description": "Interstellar is about Earth's last chance to find a habitable planet before a lack of resources causes the human race to go extinct. The film's protagonist is Cooper (Matthew McConaughey), a former NASA pilot who is tasked with leading a mission through a wormhole to find a habitable planet in another galaxy.",
-      "id": 2,
-      "year": "12014",
-      "age": "18",
-      "duration": "180",
-      "cast": "qwer, qfgvh",
-      "castImg": "hvjv, jhk"
-    },
-    {
-      "name": "Sherlok Holmes",
-      "genre": "Detective",
-      "image": "https://static.wikia.nocookie.net/bakerstreet/images/d/db/Sherlock_holmes_ritchie.jpg/revision/latest/top-crop/width/360/height/450?cb=20130202212947",
-      "description": "When a string of brutal murders terrorizes London, it doesn't take long for legendary detective Sherlock Holmes (Robert Downey Jr.) and his crime-solving partner, Dr. Watson (Jude Law), to find the killer, Lord Blackwood (Mark Strong).",
-      "id": 3
-    },
-    {
-      "name": "Nope",
-      "age": "18",
-      "year": "horror",
-      "genre": "Horror",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSIgJp_ZoMufqDS17oo_fxOplO6W34XXM_LTpjQGyxAXEdxXwpH",
-      "description": "Two siblings running a horse ranch in California discover something wonderful and sinister in the skies above, while the owner of an adjacent theme park tries to profit from the mysterious, otherworldly phenomenon.",
-      "duration": "120",
-      "cast": "xc, bnm,",
-      "castImg": "bnm",
-      "id": 5
+      "name": "Forrest Gump",
+      "age": "16",
+      "year": "Drama",
+      "genre": "1994",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppDgk99BKVA4TJtWc1FN4-HUkdWrFNfMm1-M0nQ01sIOcbTZu",
+      "description": "Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.",
+      "duration": "142",
+      "director": "Robert Zemeckis",
+      "dirImg": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRUU5scNk6F4ZbsvLF5FrpRlWXchaD8yWuehj6cfeqOdGaaCOFM",
+      "id": 6
     }
   ]
 }

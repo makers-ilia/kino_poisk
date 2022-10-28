@@ -69,14 +69,14 @@ const LoginPage = () => {
     setPassword('');
     setIsAdmin(false);
 
-    navigate('/movie')
+    navigate('/movies')
 
   }
 
 
   return (
-    <>
-    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%'}}>
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%', background: 'orange', width: '20vw', height: '38vh', opacity: '70%', borderRadius: '30px'}}>
       <h2>Login page</h2>
       <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5, }} /> 
       <TextField id="input-with-sx" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
@@ -86,11 +86,11 @@ const LoginPage = () => {
           checked={isAdmin}
           onChange={handleChange} /> <p>Admin</p>
        </Box>
-       <Button onClick={loginUser} variant="outlined" size="medium">
+       <Button sx={{color: 'black', borderRadius: '15px'}} onClick={loginUser} color="warning" variant="contained" size="medium">
           Login
         </Button>
     </Box> 
-    </>
+    </div>
   )
 }
 
