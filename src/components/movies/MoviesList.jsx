@@ -6,10 +6,17 @@ import { Pagination } from '@mui/material';
 
 const MoviesList = () => {
     const { movies, getMovies } = useMovies();
+    const [searchParams, setSearchParams] = useSearchParams();
 
     useEffect(() => {
       getMovies()
     }, [])
+
+    useEffect(() => {
+      getMovies()
+    }, [searchParams]);
+
+
 
  // pagination 
  const [page, setPage] = useState(1);
@@ -30,13 +37,16 @@ const MoviesList = () => {
 
   return (
     <div>
-      
-      {movies ? movies.map(item => (
+      <div style={{display: 'flex', flexWrap: 'wrap'}}>
+      {movies ? currentData().map(item => (
           <MovieCard key={item.id} item={item} />
         )) : (
         <h3>Loading...</h3>
       )}
+      </div> 
+      <div style={{display: 'flex', justifyContent: 'center'}}>
       <Pagination count={count} page={page} onChange={handlePage} />
+      </div>
     </div>
   )
 }

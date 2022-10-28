@@ -11,6 +11,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import { height } from '@mui/system';
 
 
 const MovieCard = ({ item }) => {
@@ -26,15 +27,15 @@ const MovieCard = ({ item }) => {
       <button onClick={() => navigate(`/edit/${item.id}`)}>Edit</button>
       <button onClick={() => deleteProduct(`${item.id}`)}>Delete</button>
       <button>Add to cart</button> */}
-      <Card sx={{ maxWidth: 345 }} >
+      <Card sx={{ maxWidth: 340, minWidth: 300, minHeight: 550, maxHeight: 550 }} >
       <CardMedia
         component="img"
-        // height="140"
+        height="200"
         image={item.image}
         alt="product picture"
       />
       <CardContent>
-        <Typography gutterBottom variant="h3" component="div">
+        <Typography gutterBottom variant="h4" component="div">
           {item.name}
         </Typography>
         <Typography gutterBottom variant="h5" component="div">

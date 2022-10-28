@@ -27,7 +27,7 @@ import FilterMovie from '../movies/FilterMovie';
 const pages = [
   {
     type: 'Movies',
-    path: '/movie'
+    path: '/movies'
   },
   {
     type: 'Favourites',
