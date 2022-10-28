@@ -61,6 +61,16 @@ const handleInp = e => {
         variant="standard"
       />
        <TextField
+        name='age'
+        value={movie.age}
+        onChange={handleInp}
+        id="standard-textarea"
+        label="Age limit"
+        placeholder="Age limit"
+        multiline
+        variant="standard"
+      />
+       <TextField
         name='genre'
         value={movie.genre}
         onChange={handleInp}
@@ -70,6 +80,16 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
+      <TextField
+          name='year'
+          value={movie.year}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Issue year"
+          placeholder="Issue year"
+          multiline
+          variant="standard"
+        />
       <TextField
         name='image' 
         value={movie.image}
@@ -90,9 +110,39 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
+      <TextField
+          name='duration' 
+          value={movie.duration}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Duration"
+          placeholder="Duration"
+          multiline
+          variant="standard"
+        />
+        <TextField
+          name='cast' 
+          value={movie.cast}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Cast"
+          placeholder="Cast"
+          multiline
+          variant="standard"
+        />
+        <TextField
+          name='castImg' 
+          value={movie.castImg}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Cast images"
+          placeholder="Cast images"
+          multiline
+          variant="standard"
+        />
      <Button onClick={() => {
       saveEditedMovie(movie)
-      navigate('/movie')
+      navigate('/movies')
      }} variant="outlined">Edit</Button>
   </Box>) : (<h3>loading</h3>)}
   </>

@@ -72,7 +72,7 @@ const MovieContextProvider = ({ children }) => {
     const search = new URLSearchParams(location.search);
     // console.log(search);
 
-    if(value === 'all'){
+    if(value === 'All'){
         search.delete(query)
     }else{
         search.set(query, value)
@@ -81,6 +81,7 @@ const MovieContextProvider = ({ children }) => {
     // console.log(value);
 
     const url = `${location.pathname}?${search.toString()}`;
+
     navigate(url);
 }
 

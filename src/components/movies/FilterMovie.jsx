@@ -36,20 +36,19 @@ export default function FilterMovie() {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        onClick={(e) => fetchByParams('genre', e.target.value)}
         MenuListProps={{
           'aria-labelledby': 'basic-button',
         }}
       >
-        <MenuItem value='all' onClick={handleClose}>All</MenuItem>
-        <MenuItem value='drama' onClick={handleClose}>Drama</MenuItem>
-        <MenuItem value='cartoons' onClick={handleClose}>Cartoons</MenuItem>
-        <MenuItem value='bio' onClick={handleClose}>Biography</MenuItem>
-        <MenuItem value='detective' onClick={handleClose}>Detective</MenuItem>
-        <MenuItem value='horror' onClick={handleClose}>Horror</MenuItem>
-        <MenuItem value='comedy' onClick={handleClose}>Comedy</MenuItem>
-        <MenuItem value='fantasy' onClick={handleClose}>Fantasy</MenuItem>
-        <MenuItem value='adults' onClick={handleClose}>For Adults</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>All</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Drama</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Cartoons</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Biography</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Detective</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Horror</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Comedy</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>Fantasy</MenuItem>
+        <MenuItem onClick={(e) => fetchByParams('genre', e.target.innerText)}>For Adults</MenuItem>
       </Menu>
     </div>
   );
