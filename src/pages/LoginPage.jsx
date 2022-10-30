@@ -78,7 +78,7 @@ const LoginPage = () => {
     <>
     <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%'}}>
       <h2>Login page</h2>
-      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5, }} /> 
+      <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5, }} /> 
       <TextField id="input-with-sx" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
       <TextField id="standard-basic" label="Password" variant="standard" onChange={e => setPassword(e.target.value)} value={password} />
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>

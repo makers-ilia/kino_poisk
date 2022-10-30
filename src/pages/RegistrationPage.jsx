@@ -74,12 +74,12 @@ const RegistrationPage = () => {
     <>
     <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%'}}>
       <h2>Registration page</h2>
-      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5, }} /> 
+      <AccountCircle sx={{ color: 'white', mr: 1, my: 0.5, }} /> 
       <TextField id="input-with-sx" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
       <TextField id="standard-basic" label="Age" variant="standard" onChange={e => setAge(e.target.value)} value={age}/> 
       <TextField id="standard-basic" label="Password" variant="standard" onChange={e => setPassword(e.target.value)} value={password} />
       <TextField id="standard-basic" label="Confirm Password" variant="standard" onChange={e => setConfPass(e.target.value)} value={confPass} /> 
-      <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
+      <Box sx={{ display: 'flex', color: 'white', alignItems: 'center', justifyContent: 'flex-start'}}>
        <Checkbox 
           checked={isAdmin}
           onChange={handleChange}
