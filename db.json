@@ -49,7 +49,6 @@
       "id": 6
     },
     {
-
       "username": "4",
       "age": "4",
       "password": "4",
@@ -57,8 +56,7 @@
       "isAdmin": true,
       "id": 7
     },
-
-
+    {
       "username": "1123",
       "age": "1123",
       "password": "1123",
@@ -77,11 +75,116 @@
   ],
   "movies": [
     {
-      "name": "marat",
-      "genre": "marat",
-      "image": "marat",
-      "description": "marat",
+      "name": "Forrest Gump",
+      "age": "16",
+      "year": "1994",
+      "genre": "Drama",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSppDgk99BKVA4TJtWc1FN4-HUkdWrFNfMm1-M0nQ01sIOcbTZu",
+      "description": "Forrest, a man with low IQ, recounts the early years of his life when he found himself in the middle of key historical events. All he wants now is to be reunited with his childhood sweetheart, Jenny.",
+      "duration": "142",
+      "director": "Robert Zemeckis",
+      "dirImg": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRUU5scNk6F4ZbsvLF5FrpRlWXchaD8yWuehj6cfeqOdGaaCOFM",
+      "id": 6
+    },
+    {
+      "name": "The Fast and the Furious",
+      "genre": "For Adults",
+      "year": "12.12.2005",
+      "image": "http://u.kanobu.ru/editor/images/54/250d8288-fb78-4231-8ec3-d97701fb7e8f.jpg",
+      "description": "«Форса́ж» — американская медиафраншиза, состоящая на 2021 год из десяти полнометражных и двух короткометражных фильмов, выпущенных с 2001 по 2021 год.",
+      "duration": "150 ",
+      "dirImg": "https://www.soyuz.ru/public/uploads/files/2/7481937/2022050312212706b0d975aa.jpg",
+      "director": "Вин Дизель",
+      "id": 8
+    },
+    {
+      "name": "Interstellar",
+      "genre": "Fantasy",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmX9URW2u_05PCekoVVgxP8ZafeTDyogUMQ9VtPprUVEK5hKH2x0Sa6ME1oCRxZNsNVhQ&usqp=CAU",
+      "description": "Interstellar is about Earth's last chance to find a habitable planet before a lack of resources causes the human race to go extinct. ",
+      "id": 2,
+      "year": "12014",
+      "age": "18",
+      "duration": "180",
+      "cast": "qwer, qfgvh",
+      "castImg": "hvjv, jhk"
+    },
+    {
+      "name": "Мстители: Финал (2019)",
+      "genre": "Detective",
+      "year": "2019",
+      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ae22f153-9715-41bb-adb4-f648b3e16092/600x900",
+      "description": "Железный человек, Тор и другие пытаются переиграть Таноса. Эпохальное завершение супергеройской франшизы",
+      "duration": "181",
+      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/59ef5a0a-8b8c-44db-9598-d400d15a64a6/180x270",
+      "director": "Джо Руссо",
+      "id": 7
+    },
+    {
+      "name": "Зеленая книга ",
+      "genre": "Drama",
+      "year": "2018",
+      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4b27e219-a8a5-4d85-9874-57d6016e0837/600x900",
+      "description": "Путешествие итальянца-вышибалы и чернокожего пианиста по Америке 1960-х. «Оскар» за лучший фильм",
+      "duration": "Питер Фаррелли",
+      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/ced2b2e8-9400-489d-9ae7-d41da6c08e1f/180x270",
+      "director": "130",
+      "id": 8
+    },
+    {
+      "name": "The Fast and the Furious",
+      "genre": "For Adults",
+      "year": "12.12.2005",
+      "image": "http://u.kanobu.ru/editor/images/54/250d8288-fb78-4231-8ec3-d97701fb7e8f.jpg",
+      "description": "«Форса́ж» — американская медиафраншиза, состоящая на 2021 год из десяти полнометражных и двух короткометражных фильмов, выпущенных с 2001 по 2021 год.",
+      "duration": "150 ",
+      "dirImg": "https://www.soyuz.ru/public/uploads/files/2/7481937/2022050312212706b0d975aa.jpg",
+      "director": "Вин Дизель",
+      "id": 8
+    },
+    {
+      "name": "Titanic",
+      "genre": "Comedy",
+      "image": "https://c4.wallpaperflare.com/wallpaper/970/201/126/titanic-movie-wallpaper-preview.jpg",
+      "description": "The movie is about the 1912 sinking of the RMS Titanic. It stars Kate Winslet and Leonardo DiCaprio. The two play characters who are of different social classes. ",
+      "cast": [
+        "qwert, efghjk, fghjk"
+      ],
       "id": 1
+    },
+    {
+      "name": "Interstellar",
+      "genre": "For Adults",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmX9URW2u_05PCekoVVgxP8ZafeTDyogUMQ9VtPprUVEK5hKH2x0Sa6ME1oCRxZNsNVhQ&usqp=CAU",
+      "description": "Interstellar is about Earth's last chance to find a habitable planet before a lack of resources causes the human race to go extinct. ",
+      "id": 2,
+      "year": "12014",
+      "age": "18",
+      "duration": "180",
+      "cast": "qwer, qfgvh",
+      "castImg": "hvjv, jhk"
+    },
+    {
+      "name": "Мстители: Финал (2019)",
+      "genre": "Drama",
+      "year": "2019",
+      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ae22f153-9715-41bb-adb4-f648b3e16092/600x900",
+      "description": "Железный человек, Тор и другие пытаются переиграть Таноса. Эпохальное завершение супергеройской франшизы",
+      "duration": "181",
+      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/59ef5a0a-8b8c-44db-9598-d400d15a64a6/180x270",
+      "director": "Джо Руссо",
+      "id": 7
+    },
+    {
+      "name": "Зеленая книга ",
+      "genre": "Fantasy",
+      "year": "2018",
+      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4b27e219-a8a5-4d85-9874-57d6016e0837/600x900",
+      "description": "Путешествие итальянца-вышибалы и чернокожего пианиста по Америке 1960-х. «Оскар» за лучший фильм",
+      "duration": "Питер Фаррелли",
+      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/ced2b2e8-9400-489d-9ae7-d41da6c08e1f/180x270",
+      "director": "130",
+      "id": 8
     }
   ]
 }

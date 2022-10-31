@@ -41,16 +41,21 @@ const handleInp = e => {
 
   return (
     <>
-    {movie ? (<Box
+    {movie ? (
+    <main style={{display: 'flex', justifyContent: 'center'}}>
+    <Box
     component="form"
     sx={{
-      '& .MuiTextField-root': { m: 1, width: '25ch' }, display: 'flex', justifyContent: 'center', marginTop: '5%', flexDirection: 'column', alignItems: 'center'
+      '& .MuiTextField-root': { m: 1, width: '25ch' }, display: 'flex', justifyContent: 'center', marginTop: '1%', alignItems: 'center', background: 'grey', flexDirection: 'column', padding: '1%', width: '40%', borderRadius: '20px', opacity: '80%'
     }}
     noValidate
     autoComplete="off"
   >
     <h2>Edit movie</h2>
-      <TextField
+    <div style={{display: 'flex', margin: '1% 0', justifyContent: 'center', alignItems: 'center'}}>
+    <Box sx={{display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
+      <TextField 
+          color="error"
         name='name' 
         value={movie.name}
         onChange={handleInp}
@@ -60,7 +65,8 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
-       <TextField
+       <TextField 
+          color="error"
         name='genre'
         value={movie.genre}
         onChange={handleInp}
@@ -70,7 +76,19 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
-      <TextField
+      <TextField 
+          color="error"
+          name='year'
+          value={movie.year}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Issue year"
+          placeholder="Issue year"
+          multiline
+          variant="standard"
+        />
+      <TextField 
+          color="error"
         name='image' 
         value={movie.image}
         onChange={handleInp}
@@ -80,7 +98,10 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
-       <TextField
+      </Box>
+      <Box sx={{display: 'flex', flexDirection: 'column'}}>
+       <TextField 
+          color="error"
         name='description'
         value={movie.description}
         onChange={handleInp}
@@ -90,11 +111,48 @@ const handleInp = e => {
         multiline
         variant="standard"
       />
+      <TextField 
+          color="error"
+          name='duration' 
+          value={movie.duration}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Duration"
+          placeholder="Duration"
+          multiline
+          variant="standard"
+        />
+       <TextField 
+          color="error"
+          name='director' 
+          value={movie.director}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Director"
+          placeholder="Director"
+          multiline
+          variant="standard"
+        />
+      <TextField 
+          color="error"
+          name='dirImg' 
+          value={movie.dirImg}
+          onChange={handleInp}
+          id="standard-textarea"
+          label="Director image"
+          placeholder="Director image"
+          multiline
+          variant="standard"
+        />
+        </Box>
+        </div>
      <Button onClick={() => {
       saveEditedMovie(movie)
-      navigate('/movie')
-     }} variant="outlined">Edit</Button>
-  </Box>) : (<h3>loading</h3>)}
+      navigate('/movies')
+     }} variant="contained" color='warning'>Edit</Button>
+  </Box>
+  </main>
+  ) : (<h3>loading</h3>)}
   </>
   )
 }

@@ -62,9 +62,6 @@ const LoginPage = () => {
       return;
     }
 
-
-  initStorage();
-
   setUserToStorage(username)
 
     
@@ -72,28 +69,28 @@ const LoginPage = () => {
     setPassword('');
     setIsAdmin(false);
 
-    navigate('/movie')
+    navigate('/movies')
 
   }
 
 
   return (
-    <>
-    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%'}}>
-      <h2>Login page</h2>
-      <AccountCircle sx={{ color: 'action.active', mr: 1, my: 0.5, }} /> 
-      <TextField id="input-with-sx" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
-      <TextField id="standard-basic" label="Password" variant="standard" onChange={e => setPassword(e.target.value)} value={password} />
+    <div style={{display: 'flex', justifyContent: 'center'}}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', flexDirection: 'column', alignItems: 'center' , marginTop: '4%', background: 'grey', width: '20vw', height: '38vh', opacity: '80%', borderRadius: '30px'}}>
+      <h2 style={{marginBottom: '3%'}}>Login page</h2>
+      <TextField id="input-with-sx" color="error" label="User Name" variant="standard" onChange={e => setUsername(e.target.value)} value={username} />
+      <TextField id="standard-basic" color="error" label="Password" variant="standard" onChange={e => setPassword(e.target.value)} value={password} />
       <Box sx={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-start'}}>
        <Checkbox 
           checked={isAdmin}
+          color="warning"
           onChange={handleChange} /> <p>Admin</p>
        </Box>
-       <Button onClick={loginUser} variant="outlined" size="medium">
+       <Button sx={{color: 'black', borderRadius: '15px'}} onClick={loginUser} color="warning" variant="contained" size="medium">
           Login
         </Button>
     </Box> 
-    </>
+    </div>
   )
 }
 

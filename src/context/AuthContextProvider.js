@@ -5,12 +5,12 @@ import { useNavigate } from 'react-router-dom'
 export const authContext = React.createContext();
 export const useAuth = () => useContext(authContext)
 
-const API =  "http://localhost:3000/users"
+const API =  "http://localhost:8000/users"
 
 
 const AuthContextProvider = ({ children }) => {
   const [user, setUser] = useState([]);
-  // const [error, setError] = useState([]);
+  const navigate = useNavigate()
 
   // register logic 
   const registerUser = (user) => {
@@ -43,6 +43,7 @@ const AuthContextProvider = ({ children }) => {
     localStorage.setItem("user", JSON.stringify(userObj));
     let oneUser = JSON.parse(localStorage.getItem('user'))
     setUser(oneUser);
+
     console.log(user);
   }
 
@@ -89,19 +90,15 @@ const AuthContextProvider = ({ children }) => {
       return false;
     }
      return true;
-   }  
+    }  
 
+    // logout 
 
-  //  const adminCheck = () => {
-  //   let user = JSON.parse(localStorage.getItem('user'));
-  //   // console.log(user.isAdmin);
-  //   if(user.isAdmin === true){
-  //    return true;
-  //   } else{
-  //     return false;
-  //   }
-  //  }
-  //  console.log(adminCheck())
+    function logout(){
+      localStorage.removeItem("user");
+      setUser('');
+      navigate('/movies');
+  }
 
    
   return (
@@ -114,7 +111,8 @@ const AuthContextProvider = ({ children }) => {
       initStorage,
       setUserToStorage,
       getUserFromStorage,
-      // adminCheck,
+      logout,
+
       user
     }}>
       { children }

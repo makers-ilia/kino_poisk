@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -17,25 +17,22 @@ import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
 
 //custom
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContextProvider';
 import { useEffect } from 'react';
-
+import { useMovies } from '../../context/MovieContextProvider';
+import FilterMovie from '../movies/FilterMovie';
 
 
 const pages = [
   {
     type: 'Movies',
-    path: '/movie'
+    path: '/movies'
   },
   {
     type: 'Favourites',
     path: '/fav'
-  },
-  {
-    type: 'Cart',
-    path: '/cart'
-}
+  }
 ];
 const settings = [
     {
@@ -54,19 +51,33 @@ const settings = [
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+
   React.useEffect(() => {
     getUserFromStorage();
     // console.log('qwert');
   }, [])
 
-  const { getUserFromStorage, user } = useAuth();
+  const navigate = useNavigate()
+  const { initStorage } = useAuth();
 
-  
+  useEffect(() => {
+    initStorage()
+  }, [])
+
+  const { getUserFromStorage, user, logout } = useAuth();
+
+
   const {movies, getMovies} = useMovies()
   
   useEffect(() => {
     getMovies();
   }, []);
+
+  useEffect(() => {
+    if(localStorage.getItem("user")){
+      console.log(user);
+  };
+  }, [])
  
   const [searchParams, setSearchParams] = useSearchParams()
   const [search, setSearch] = useState(searchParams.get("q") || "")
@@ -74,17 +85,12 @@ function Navbar() {
   useEffect(()=>{
     setSearchParams({
       q: search
-    });
+    })
+    }, [search]);
 
-function Navbar() {
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-  useEffect(() => {
-    getUserFromStorage();
-  }, [])
-
-  const { getUserFromStorage, user } = useAuth();
-
+    useEffect(()=>{
+      getMovies()
+      }, [searchParams, ]);
 
   
   // let userObj = JSON.parse(localStorage.getItem('user'))
@@ -147,15 +153,13 @@ function Navbar() {
     },
   }));
 
-  const navigate = useNavigate()
 
   return (
 
 
-    <AppBar position="sticky">
+    <AppBar sx={{backgroundColor: '#03101c'}} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -167,24 +171,13 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'orange',
               textDecoration: 'none',
             }}
           >
-            LOGO
+            KinoPoisk
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              size="large"
-              aria-label="account of current user"
-              aria-controls="menu-appbar"
-              aria-haspopup="true"
-              onClick={handleOpenNavMenu}
-              color="inherit"
-            >
-              <MenuIcon />
-          
-            </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -208,6 +201,9 @@ function Navbar() {
                   <Typography textAlign="center">{page.type}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem>
+                <FilterMovie />
+              </MenuItem>
               {user.isAdmin === true ? (
                 <MenuItem>
                 <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
@@ -218,7 +214,6 @@ function Navbar() {
               
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -247,6 +242,9 @@ function Navbar() {
                 {page.type}
               </Button>
             ))}
+            <MenuItem>
+                <FilterMovie />
+              </MenuItem>
             {user.isAdmin === true ? (
                 <MenuItem>
                 <Typography onClick={() => navigate('/add')} textAlign="center">Add Movie</Typography>
@@ -256,21 +254,12 @@ function Navbar() {
               )}
           </Box>
           <Box style={{marginRight: '2%'}}>
-            {/* new branch create */}
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search>
+          <input className='put' type="text" value={search} onChange={(e) => {setSearch(e.target.value); navigate("/movies")}} placeholder='Search...' />
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/ee/c0/71/eec071442e9a1b8e017c5a7c1853b880.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
@@ -294,6 +283,7 @@ function Navbar() {
                   <Typography textAlign="center">{setting.type}</Typography>
                 </MenuItem>
               ))}
+              <MenuItem onClick={logout}>Logout</MenuItem>
             </Menu>
           </Box>
         </Toolbar>
@@ -301,4 +291,4 @@ function Navbar() {
     </AppBar>
   );
 }
-export default Navbar;
+export default Navbar

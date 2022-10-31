@@ -5,7 +5,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 export const movieContext = createContext();
 export const useMovies = () => useContext(movieContext);
 
-const MOVIE_API = 'http://localhost:3000/movies'
+const MOVIE_API = 'http://localhost:8000/movies'
 
 const INIT_STATE = {
   movies: [],
@@ -33,6 +33,7 @@ const MovieContextProvider = ({ children }) => {
       //get all movies
       const getMovies = async () => {
         const { data } = await axios(`${MOVIE_API}/${window.location.search}`);
+        // console.log(window.location.search);
         dispatch({
             type: 'GET_MOVIES',
             payload: data
@@ -54,6 +55,7 @@ const MovieContextProvider = ({ children }) => {
   //update/details
   const getMovieDetails = async (id) => {
     const { data } = await axios(`${MOVIE_API}/${id}`);
+    // const res = await axios(`${MOVIE_API}/${id}`);
     dispatch({
         type: 'GET_MOVIE_DETAILS',
         payload: data
@@ -65,17 +67,39 @@ const MovieContextProvider = ({ children }) => {
     getMovies();
   }
 
+  // for filter 
+
+  const fetchByParams = (query, value) => {
+    const search = new URLSearchParams(location.search);
+    // console.log(search);
+
+    if(value === 'All'){
+        search.delete(query)
+    }else{
+        search.set(query, value)
+    };
+
+    // console.log(value);
+
+    const url = `${location.pathname}?${search.toString()}`;
+
+    navigate(url);
+}
+
   const values = {
     addMovie,
     getMovies,
     deleteMovie,
     getMovieDetails,
     saveEditedMovie,
-    // fetchByParams,
+    fetchByParams,
 
     movies: state.movies,
     movieDetails: state.movieDetails
 };
+
+
+// console.log(state.movieDetails, );
 
   return (
     <movieContext.Provider value={values}>
