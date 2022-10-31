@@ -10,11 +10,13 @@ import HomePage from './pages/HomePage'
 import MovieDetailsPage from './pages/MovieDetailsPage'
 import MoviesPage from './pages/MoviesPage'
 import NotFoundPage from './pages/NotFoundPage'
+import Background from './components/Background'
 
 const MainRoutes = () => {
   return (
     <>
   <Navbar/>
+  <Background />
   <Routes>
     <Route path='/register' element={<RegistrationPage/>}/>
     <Route path='/login' element={<LoginPage/>}/>

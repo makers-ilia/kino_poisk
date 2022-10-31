@@ -32,11 +32,7 @@ const pages = [
   {
     type: 'Favourites',
     path: '/fav'
-  },
-  {
-    type: 'Cart',
-    path: '/cart'
-}
+  }
 ];
 const settings = [
     {
@@ -161,10 +157,9 @@ function Navbar() {
   return (
 
 
-    <AppBar sx={{backgroundColor: '#03101c', color: 'orange', borderBottom: 'orange'}} position="sticky">
+    <AppBar sx={{backgroundColor: '#03101c'}} position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
           <Typography
             variant="h6"
             noWrap
@@ -176,24 +171,13 @@ function Navbar() {
               fontFamily: 'monospace',
               fontWeight: 700,
               letterSpacing: '.3rem',
-              color: 'inherit',
+              color: 'orange',
               textDecoration: 'none',
             }}
           >
             KinoPoisk
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
-            <IconButton
-              // size="large"
-              // aria-label="account of current user"
-              // aria-controls="menu-appbar"
-              // aria-haspopup="true"
-              // onClick={handleOpenNavMenu}
-              // color="inherit"
-            >
-              <MenuIcon />
-          
-             </IconButton>
             <Menu
               id="menu-appbar"
               anchorEl={anchorElNav}
@@ -230,7 +214,6 @@ function Navbar() {
               
             </Menu>
           </Box>
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
           <Typography
             variant="h5"
             noWrap
@@ -271,22 +254,12 @@ function Navbar() {
               )}
           </Box>
           <Box style={{marginRight: '2%'}}>
-            {/* new branch create */}
-          {/* <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ 'aria-label': 'search' }}
-            />
-          </Search> */}
           <input className='put' type="text" value={search} onChange={(e) => {setSearch(e.target.value); navigate("/movies")}} placeholder='Search...' />
           </Box>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+                <Avatar alt="Remy Sharp" src="https://i.pinimg.com/originals/ee/c0/71/eec071442e9a1b8e017c5a7c1853b880.jpg" />
               </IconButton>
             </Tooltip>
             <Menu
