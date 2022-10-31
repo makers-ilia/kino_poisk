@@ -33,91 +33,91 @@ export default function MultilineTextFields() {
 
 
   const buttonAdd = () => {
-    if(!name.trim() || !age.trim() || !genre.trim() || !image.trim() || !description.trim()){
+    if(!name.trim() || !genre.trim() || !image.trim() || !description.trim()){
       alert('Some inputs are empty!');
       return;
     };
 
     let movieObj = {
       name,
-      age,
       genre,
       year,
       image,
       description,
       duration,
-      director,
-      dirImg
+      dirImg,
+      director
     }
 
     // setMovie(movieObj);
 
     addMovie(movieObj);
     setName('');
-    setAge('');
-    setYear('');
     setGenre('');
+    setYear('');
     setImage('');
     setDescription('');
     setDuration('');
-    setDirector('');
     setDirImg('');
+    setDirector('');
     navigate('/movies');
   }
 
 
   return (
+    <main style={{display: 'flex', justifyContent: 'center'}}>
     <Box
       component="form"
       sx={{
-        '& .MuiTextField-root': { m: 1, width: '25ch' }, display: 'flex', justifyContent: 'center', marginTop: '5%', flexDirection: 'column', alignItems: 'center'
+        '& .MuiTextField-root': { m: 1, width: '25ch' }, display: 'flex', justifyContent: 'center', marginTop: '5%', alignItems: 'center', background: 'grey', flexDirection: 'column', width: '40%', padding: '2%', borderRadius: '20px', opacity: '80%'
       }}
       noValidate
       autoComplete="off"
     >
       <h2>Add movie</h2>
+      <div style={{display: 'flex', margin: '3% 0'}}>
+      <Box sx={{display: 'flex', flexDirection: 'column'}}>
         <TextField value={name}
           onChange={e => setName(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Movie name"
           placeholder="Movie name "
           multiline
           variant="standard"
         />
-        <TextField value={age}
-          onChange={e => setAge(e.target.value)}
-          id="standard-textarea"
-          label="Age limit"
-          placeholder="Age limit "
-          multiline
-          variant="standard"
-        />
          <TextField value={genre}
           onChange={e => setGenre(e.target.value)}
-          id="standard-textarea"
-          label="Issue year"
-          placeholder="Issue year"
-          multiline
-          variant="standard"
-        />
-        <TextField value={year}
-          onChange={e => setYear(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Genre"
           placeholder="Genre"
           multiline
           variant="standard"
         />
+        <TextField value={year}
+          onChange={e => setYear(e.target.value)}
+          color="error"
+          id="standard-textarea"
+          label="Release date"
+          placeholder="Release date"
+          multiline
+          variant="standard"
+        />
         <TextField value={image}
           onChange={e => setImage(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Image"
           placeholder="Image"
           multiline
           variant="standard"
         />
+        </Box>
+        <Box sx={{display: 'flex', flexDirection: 'column'}}>
          <TextField value={description}
           onChange={e => setDescription(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Description"
           placeholder="Description"
@@ -126,6 +126,7 @@ export default function MultilineTextFields() {
         />
         <TextField value={duration}
           onChange={e => setDuration(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Duration"
           placeholder="Duration"
@@ -134,6 +135,7 @@ export default function MultilineTextFields() {
         />
         <TextField value={director}
           onChange={e => setDirector(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Director"
           placeholder="Director"
@@ -142,13 +144,17 @@ export default function MultilineTextFields() {
         />
         <TextField value={dirImg}
           onChange={e => setDirImg(e.target.value)}
+          color="error"
           id="standard-textarea"
           label="Director image"
           placeholder="Director image"
           multiline
           variant="standard"
         />
-       <Button onClick={buttonAdd} variant="outlined">Add</Button>
+        </Box>
+        </div>
+       <Button onClick={buttonAdd} variant="contained" color='warning'>Add</Button>
     </Box>
+    </main>
   );
 }

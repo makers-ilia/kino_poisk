@@ -60,9 +60,6 @@ const MovieContextProvider = ({ children }) => {
         type: 'GET_MOVIE_DETAILS',
         payload: data
     });
-
-
-
   };
 
   const saveEditedMovie = async (newProduct) => {

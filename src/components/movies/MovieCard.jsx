@@ -1,7 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMovies } from '../../context/MovieContextProvider';
-import { authContext, useAuth } from '../../context/AuthContextProvider';
+import { useAuth } from '../../context/AuthContextProvider';
+import { useFav } from '../../context/FavContextProvider';
 
 
 // mui imports 
@@ -16,6 +17,7 @@ import { height } from '@mui/system';
 
 const MovieCard = ({ item }) => {
   const navigate = useNavigate();
+  const { addMovieToFav } = useFav();
 
   const { deleteMovie } = useMovies();
  const { user} = useAuth();
@@ -27,34 +29,36 @@ const MovieCard = ({ item }) => {
       <button onClick={() => navigate(`/edit/${item.id}`)}>Edit</button>
       <button onClick={() => deleteProduct(`${item.id}`)}>Delete</button>
       <button>Add to cart</button> */}
-      <Card sx={{ maxWidth: 340, minWidth: 300, minHeight: 550, maxHeight: 550 }} >
+      <Card sx={{ maxWidth: 240, minWidth: 200, minHeight: 450, maxHeight: 450, color: 'orange', background: 'black', border: '3px solid orange', borderRadius: '20px', paddingTop: '8%' }} >
       <CardMedia
         component="img"
-        height="200"
+        style={{width: '11vw', height: '20vh', margin: 'auto', borderRadius: '10px'}}
         image={item.image}
         alt="product picture"
       />
       <CardContent>
-        <Typography gutterBottom variant="h4" component="div">
+        <Typography gutterBottom variant="h5" component="div">
           {item.name}
         </Typography>
-        <Typography gutterBottom variant="h5" component="div">
+        <Typography gutterBottom variant="p" component="div">
           {item.genre}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography style={{fontSize: '12px', color: 'orange'}} variant="body2" color="text.secondary">
           {item.description}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
-          {item.director}
-        </Typography>
       </CardContent>
-      <CardActions>
-        <Button onClick={() => navigate(`/details/${item.id}`)} size="small">Details</Button>
+      <CardActions style={{display: 'flex', justifyContent: 'space-around', width: '100%'}}>
+        <Button sx={{paddingLeft: '2vw', margin: '0px'}} onClick={() => navigate(`/details/${item.id}`)} size="small"><img height="30" width="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Information_orange.svg/2032px-Information_orange.svg.png" alt="" /></Button>
         {user.isAdmin === true ? (
-        <><Button onClick={() => navigate(`/edit/${item.id}`)} size="small">Edit</Button>
-        <Button onClick={() => deleteMovie(item.id)} size="small">Delete</Button></>) : ('')}
+        <><Button sx={{padding: '0px', margin: '0px'}} onClick={() => navigate(`/edit/${item.id}`)} size="small">
+          <img src="https://icon-library.com/images/edit-pencil-icon/edit-pencil-icon-12.jpg" width="40" height="40" alt="" />
+        </Button>
+        <Button sx={{padding: '0px', margin: '0px'}} onClick={() => deleteMovie(item.id)} size="small">
+          <img src="https://cdn2.iconfinder.com/data/icons/ios-7-tab-bar-icons/500/trash-512.png" width="30" height="30" alt="" /></Button></>) : ('')}
         
-        <Button size="small">Add to cart</Button>
+        <Button onClick={() => addMovieToFav(item)} sx={{paddingRight: '2vw', margin: '0px'}} size="small">
+          <img src="https://icon-library.com/images/bookmark-icon-png/bookmark-icon-png-16.jpg" width="30" height="30" alt="" />
+        </Button>
       </CardActions>
     </Card>
     </div>
