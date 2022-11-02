@@ -14,9 +14,9 @@ const FavContextProvider= ({ children }) => {
         localStorage.setItem("fav", JSON.stringify({movies: []}));
         }
 
-        fav = {
-            movies: []
-        };
+        // fav = {
+        //     movies: []
+        // };
 
         setFav(fav);
     }

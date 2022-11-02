@@ -167,24 +167,7 @@
     {
       "name": "Мстители: Финал (2019)",
       "genre": "Drama",
-      "year": "2019",
-      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1600647/ae22f153-9715-41bb-adb4-f648b3e16092/600x900",
-      "description": "Железный человек, Тор и другие пытаются переиграть Таноса. Эпохальное завершение супергеройской франшизы",
-      "duration": "181",
-      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/59ef5a0a-8b8c-44db-9598-d400d15a64a6/180x270",
-      "director": "Джо Руссо",
-      "id": 7
-    },
-    {
-      "name": "Зеленая книга ",
-      "genre": "Fantasy",
-      "year": "2018",
-      "image": "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4b27e219-a8a5-4d85-9874-57d6016e0837/600x900",
-      "description": "Путешествие итальянца-вышибалы и чернокожего пианиста по Америке 1960-х. «Оскар» за лучший фильм",
-      "duration": "Питер Фаррелли",
-      "dirImg": "https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/ced2b2e8-9400-489d-9ae7-d41da6c08e1f/180x270",
-      "director": "130",
-      "id": 8
+
     }
   ]
 }
