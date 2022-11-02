@@ -14,16 +14,18 @@ const FavouritesPage = () => {
 
   useEffect(() => {
     getFav()
-  }, [])
+    console.log(fav);
+  }, []);
+
 
   return (
     <>
       {fav?.movies.map((elem) => (
-      <Card key={elem.name} sx={{ maxWidth: 240, minWidth: 200, minHeight: 450, maxHeight: 450, color: 'orange', background: 'black', border: '3px solid orange', borderRadius: '20px', paddingTop: '8%' }} >
+      <Card key={elem.item.name} sx={{ maxWidth: 240, minWidth: 200, minHeight: 450, maxHeight: 450, color: 'orange', background: 'black', border: '3px solid orange', borderRadius: '20px', paddingTop: '3%' }} >
         <>
         <CardMedia
         component="img"
-        style={{width: '11vw', height: '20vh', margin: 'auto', borderRadius: '10px'}}
+        style={{width: '50%', height: '60%', margin: 'auto', borderRadius: '10px'}}
         image={elem.item.image}
         alt="product picture" />
       <CardContent>
@@ -35,19 +37,6 @@ const FavouritesPage = () => {
         </div>
       </CardContent>
       </>
-      {/* <CardActions style={{display: 'flex', justifyContent: 'space-around', width: '100%'}}>
-        <Button sx={{paddingLeft: '2vw', margin: '0px'}} onClick={() => navigate(`/details/${item.id}`)} size="small"><img height="30" width="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Information_orange.svg/2032px-Information_orange.svg.png" alt="" /></Button>
-        {user.isAdmin === true ? (
-          <><Button sx={{padding: '0px', margin: '0px'}} onClick={() => navigate(`/edit/${item.id}`)} size="small">
-          <img src="https://icon-library.com/images/edit-pencil-icon/edit-pencil-icon-12.jpg" width="40" height="40" alt="" />
-          </Button>
-          <Button sx={{padding: '0px', margin: '0px'}} onClick={() => deleteMovie(item.id)} size="small">
-          <img src="https://cdn2.iconfinder.com/data/icons/ios-7-tab-bar-icons/500/trash-512.png" width="30" height="30" alt="" /></Button></>) : ('')}
-          
-          <Button sx={{paddingRight: '2vw', margin: '0px'}} size="small">
-          <img src="https://icon-library.com/images/bookmark-icon-png/bookmark-icon-png-16.jpg" width="30" height="30" alt="" />
-          </Button>
-        </CardActions> */}
     </Card>
         ))}
     </>
