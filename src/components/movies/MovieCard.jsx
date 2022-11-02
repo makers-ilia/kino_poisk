@@ -29,7 +29,7 @@ const MovieCard = ({ item }) => {
       <button onClick={() => navigate(`/edit/${item.id}`)}>Edit</button>
       <button onClick={() => deleteProduct(`${item.id}`)}>Delete</button>
       <button>Add to cart</button> */}
-      <Card sx={{ maxWidth: 240, minWidth: 200, minHeight: 450, maxHeight: 450, color: 'orange', background: 'black', border: '3px solid orange', borderRadius: '20px', paddingTop: '8%' }} >
+      <Card sx={{ maxWidth: 300, minWidth: 300, minHeight: 450, maxHeight: 450, color: 'orange', background: 'black', border: '3px solid orange', borderRadius: '20px', paddingTop: '8%' }} >
       <CardMedia
         component="img"
         style={{width: '11vw', height: '20vh', margin: 'auto', borderRadius: '10px'}}
